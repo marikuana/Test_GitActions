@@ -39,11 +39,13 @@ jobs:
 
     - run: git remote add heroku https://heroku:${{secrets.HEROKU_API_KEY}}@git.heroku.com/${{secrets.HEROKU_APP_NAME}}.git
     
-    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          buildpack: "https://github.com/jincod/dotnetcore-buildpack"
+    - run: git push heroku HEAD:master -f
     
-    ## - run: git push heroku HEAD:master
+    ## - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+    ##  with:
+    ##      heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+    ##      heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+    ##      buildpack: "https://github.com/jincod/dotnetcore-buildpack"
+    
+    
 
