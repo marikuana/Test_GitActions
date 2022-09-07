@@ -22,4 +22,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Map("/", context =>
+{
+    context.Response.Redirect("WeatherForecast");
+    return Task.CompletedTask;
+});
+    
 app.Run();
