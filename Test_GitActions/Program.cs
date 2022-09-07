@@ -24,7 +24,7 @@ app.MapControllers();
 
 app.Map("/", context =>
 {
-    context.Response.Redirect("WeatherForecast");
+    context.Response.Redirect("WeatherForecastq");
     return Task.CompletedTask;
 });
     
